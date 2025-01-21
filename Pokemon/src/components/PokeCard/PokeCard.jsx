@@ -1,26 +1,17 @@
 import Card from 'react-bootstrap/Card';
 
-export default function PokeCard() {
+export default function PokeCard({ img, name, poke }) {
+    console.log(poke)
+
     return (
         <>
             <Card>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                        {name}
                     </Card.Text>
                 </Card.Body>
-            </Card>
-            <br />
-            <Card>
-                <Card.Body>
-                    <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                    </Card.Text>
-                </Card.Body>
-                <Card.Img variant="bottom" src="holder.js/100px180" />
             </Card>
         </>
     )

@@ -5,6 +5,12 @@ import App from '../App/App.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <App />
+        <div className='bgM' />
+        <div className='bgL' />
+        <div className='bgR' />
+        <div style={{ zIndex: '1000', position: 'relative' }}>
+            <App />
+        </div>
+
     </StrictMode>,
 )
