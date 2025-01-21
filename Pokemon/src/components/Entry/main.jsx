@@ -1,7 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+
 import App from '../App/App.jsx'
+
+import './index.css'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -11,6 +13,5 @@ createRoot(document.getElementById('root')).render(
         <div style={{ zIndex: '1000', position: 'relative' }}>
             <App />
         </div>
-
     </StrictMode>,
 )

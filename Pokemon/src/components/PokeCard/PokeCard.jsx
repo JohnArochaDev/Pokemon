@@ -2,7 +2,6 @@ import Card from 'react-bootstrap/Card';
 import './PokeCard.css'
 
 export default function PokeCard({ img, name, poke, number }) {
-    console.log(poke)
 
     return (
         <>

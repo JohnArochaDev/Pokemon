@@ -1,7 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import PokeCard from '../PokeCard/PokeCard'
-import backgroundImage from '../../assets/pokemon.png'; // Adjust the path as necessary
+import backgroundImage from '../../assets/pokemon.png';
 
 function App() {
     const [pokemon, setPokemon] = useState([])
