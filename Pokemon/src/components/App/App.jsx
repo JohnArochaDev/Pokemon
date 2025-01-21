@@ -1,6 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 import PokeCard from '../PokeCard/PokeCard'
 import PokemonDetail from '../PokemonDetail/PokemonDetail.jsx'
@@ -8,6 +9,8 @@ import PokemonDetail from '../PokemonDetail/PokemonDetail.jsx'
 import backgroundImage from '../../assets/pokemon.png'
 
 function App() {
+    const navigate = useNavigate();
+
     const [pokemon, setPokemon] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
 
@@ -58,7 +61,7 @@ function App() {
                         />
                         <div className="row" style={{marginTop: '5vh'}}>
                             {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
-                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx}>
+                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx} onClick={() => navigate(`/${poke.number}`)}>
                                     <PokeCard
                                         name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
                                         img={poke.img}
