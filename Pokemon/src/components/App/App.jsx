@@ -35,12 +35,12 @@ function App() {
     }, [])
 
     const filteredPokemon = pokemon.filter(poke =>
-        poke.name.toLowerCase().includes(searchQuery.toLowerCase())
+        poke.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
     )
 
     return (
         <div className="container">
-            <div style={{paddingTop: '1vh', paddingBottom: '10vh'}} >
+            <div style={{paddingTop: '1vh', paddingBottom: '4vh'}} >
                 <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
             </div>
             <input
@@ -50,7 +50,7 @@ function App() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{ padding: '10px', marginBottom: '20px', width: '80%', maxWidth: '400px', border: '1px solid #ccc', borderRadius: '5px' }}
             />
-            <div className="row">
+            <div className="row" style={{marginTop: '5vh'}}>
                 {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
                     <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx}>
                         <PokeCard
