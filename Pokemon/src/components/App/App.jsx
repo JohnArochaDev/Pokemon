@@ -33,8 +33,8 @@ function App() {
 
     return (
         <div className="container">
-            <div style={{paddingTop: '1vh', paddingBottom: '2vh'}} >
-                <img src={backgroundImage} alt="Background" />
+            <div style={{paddingTop: '1vh', paddingBottom: '10vh'}} >
+                <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
             </div>
             <div className="row">
                 {pokemon.length > 0 ? pokemon.map((poke, idx) => (
