@@ -1,7 +1,11 @@
 import './App.css'
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+
 import PokeCard from '../PokeCard/PokeCard'
-import backgroundImage from '../../assets/pokemon.png';
+import PokemonDetail from '../PokemonDetail/PokemonDetail.jsx'
+
+import backgroundImage from '../../assets/pokemon.png'
 
 function App() {
     const [pokemon, setPokemon] = useState([])
@@ -16,7 +20,6 @@ function App() {
                     data.results.map(async (poke, index) => {
                         const res = await fetch(poke.url)
                         const details = await res.json()
-                        console.log(details.sprites.default)
                         return {
                             name: poke.name,
                             img: details.sprites.front_default,
@@ -40,28 +43,35 @@ function App() {
 
     return (
         <div className="container">
-            <div style={{paddingTop: '1vh', paddingBottom: '4vh'}} >
-                <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
-            </div>
-            <input
-                type="text"
-                placeholder="Search Pokémon"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ padding: '10px', marginBottom: '20px', width: '80%', maxWidth: '400px', border: '1px solid #ccc', borderRadius: '5px' }}
-            />
-            <div className="row" style={{marginTop: '5vh'}}>
-                {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
-                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx}>
-                        <PokeCard
-                            name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
-                            img={poke.img}
-                            poke={poke}
-                            number={poke.number}
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <div style={{paddingTop: '1vh', paddingBottom: '4vh'}} >
+                            <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="Search Pokémon"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            style={{ padding: '10px', marginBottom: '20px', width: '80%', maxWidth: '400px', border: '1px solid #ccc', borderRadius: '5px' }}
                         />
-                    </div>
-                )) : ''}
-            </div>
+                        <div className="row" style={{marginTop: '5vh'}}>
+                            {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
+                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx}>
+                                    <PokeCard
+                                        name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
+                                        img={poke.img}
+                                        poke={poke}
+                                        number={poke.number}
+                                    />
+                                </div>
+                            )) : ''}
+                        </div>
+                    </>
+                } />
+                <Route path='/:id' element={<PokemonDetail />} />
+            </Routes>
         </div>
     );
 }
