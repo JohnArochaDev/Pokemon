@@ -12,13 +12,15 @@ function App() {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
                 const data = await response.json()
                 const detailedPokemon = await Promise.all(
-                    data.results.map(async (poke) => {
+                    data.results.map(async (poke, index) => {
                         const res = await fetch(poke.url)
                         const details = await res.json()
+                        console.log(details.sprites.default)
                         return {
                             name: poke.name,
                             img: details.sprites.front_default,
-                            url: poke.url
+                            url: poke.url,
+                            number: index + 1
                         }
                     })
                 )
@@ -40,9 +42,10 @@ function App() {
                 {pokemon.length > 0 ? pokemon.map((poke, idx) => (
                     <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
                         <PokeCard
-                            name={poke.name}
+                            name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
                             img={poke.img}
                             poke={poke}
+                            number={poke.number}
                         />
                     </div>
                 )) : ''}
