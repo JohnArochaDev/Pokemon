@@ -1,6 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import PokeCard from '../PokeCard/PokeCard'
+import backgroundImage from '../../assets/pokemon.png'; // Adjust the path as necessary
 
 function App() {
     const [pokemon, setPokemon] = useState([])
@@ -32,7 +33,9 @@ function App() {
 
     return (
         <div className="container">
-            <h1>Pokemon</h1>
+            <div style={{paddingTop: '1vh', paddingBottom: '2vh'}} >
+                <img src={backgroundImage} alt="Background" />
+            </div>
             <div className="row">
                 {pokemon.length > 0 ? pokemon.map((poke, idx) => (
                     <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
