@@ -5,6 +5,7 @@ import backgroundImage from '../../assets/pokemon.png'; // Adjust the path as ne
 
 function App() {
     const [pokemon, setPokemon] = useState([])
+    const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
         async function fetchPokemon() {
@@ -33,14 +34,25 @@ function App() {
         fetchPokemon()
     }, [])
 
+    const filteredPokemon = pokemon.filter(poke =>
+        poke.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+
     return (
         <div className="container">
             <div style={{paddingTop: '1vh', paddingBottom: '10vh'}} >
                 <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
             </div>
+            <input
+                type="text"
+                placeholder="Search Pokémon"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{ padding: '10px', marginBottom: '20px', width: '80%', maxWidth: '400px', border: '1px solid #ccc', borderRadius: '5px' }}
+            />
             <div className="row">
-                {pokemon.length > 0 ? pokemon.map((poke, idx) => (
-                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
+                {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
+                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx}>
                         <PokeCard
                             name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
                             img={poke.img}
