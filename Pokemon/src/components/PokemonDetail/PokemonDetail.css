@@ -1,0 +1,26 @@
+.pokemon-detail-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section,
+.right-section {
+    padding: 20px;
+}
+
+.bottom-section {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.pokemon-detail-container .left-section,
+.pokemon-detail-container .right-section {
+    margin-bottom: 20px;
+}
+
+.pokemon-detail-container .right-section p {
+    margin: 10px 0;
+}
