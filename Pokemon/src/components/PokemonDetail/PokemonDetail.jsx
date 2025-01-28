@@ -82,14 +82,18 @@ export default function PokemonDetail() {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-6 left-section text-center d-flex flex-column align-items-center">
-                    <h2>
-                        {pokemon.name[0].toUpperCase() +
-                            pokemon.name.substring(1, pokemon.name.length + 1)}
-                    </h2>
-                    <h4>Height: {pokemon.height}</h4>
-                    <h4>Weight: {pokemon.weight}</h4>
-                </div>
+            <div className="col-md-6 left-section text-center d-flex flex-column align-items-center">
+                <h1>
+                    {pokemon.name[0].toUpperCase() +
+                        pokemon.name.substring(1, pokemon.name.length + 1)}
+                </h1>
+                <h2>
+                    <span className="label">Height:</span> <span className="data">{pokemon.height}</span>
+                </h2>
+                <h2>
+                    <span className="label">Weight:</span> <span className="data">{pokemon.weight}</span>
+                </h2>
+            </div>
                 <div className="col-md-6 right-section d-flex flex-column justify-content-center align-items-center">
                     <h3>Description:</h3>
                     <p>{description}</p>
