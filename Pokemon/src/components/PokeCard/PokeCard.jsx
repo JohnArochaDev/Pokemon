@@ -28,10 +28,13 @@ export default function PokeCard({ img, name, poke, number, team, setTeam, chang
 
     return (
         <>
-            <Card className={size == 'small' ? 'poke-card-team' : changeTeam ? 'poke-card-shake' : 'poke-card'} ref={cardRef}>
+            <Card className={size == 'small' ? changeTeam ? 'poke-card-team-shake' : 'poke-card-team' : changeTeam ? 'poke-card-shake' : 'poke-card'} ref={cardRef}>
                 <Card.Img variant="top" src={img} style={{ backgroundColor: '#d9d9d9' }} />
-                {changeTeam && (
-                    <Button className='x-button' onClick={() => addToTeam()}>
+                {size === 'small' && (
+                    <Button className='team-x-button' variant='danger'></Button>
+                )}
+                {changeTeam && !size && (
+                    <Button className='hover-button' onClick={() => addToTeam()}>
                         <h2>Add to Team</h2>
                     </Button>
                 )}

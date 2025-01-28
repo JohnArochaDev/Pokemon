@@ -39,9 +39,10 @@
     margin-top: 50px;
 }
 
-.menu-content a {
+.menu-content {
+    margin-top: -1vh !important;
     display: block;
-    padding: 10px 0;
+    padding: 0;
     text-decoration: none;
     color: black;
 }
@@ -52,6 +53,6 @@
 
 .change-team {
     position: absolute;
-    bottom: 3vh;
+    bottom: .5vh;
     transform: translate(-50%, -50%);
 }

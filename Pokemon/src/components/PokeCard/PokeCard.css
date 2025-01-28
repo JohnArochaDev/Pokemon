@@ -22,7 +22,7 @@
     transition: transform 0.03s ease;
     margin-bottom: 5vh;
     animation: wiggle 1.7s ease infinite;
-    animation-delay: var(--animation-delay, 0s); /* Use CSS variable for animation delay */
+    animation-delay: var(--animation-delay, 0s);
 }
 
 .poke-card:hover {
@@ -30,14 +30,27 @@
 }
 
 .poke-card-team {
-    width: 6vw;
+    width: 7vw;
     transition: transform 0.3s ease;
     margin-bottom: 5vh;
-    margin: 2vh auto; /* Add vertical spacing between cards */
+    margin: 2vh auto;
 }
 
 .poke-card-team .card-body {
-    display: none; /* Hide the card body content */
+    display: none;
+}
+
+.poke-card-team-shake {
+    width: 7vw;
+    transition: transform 0.3s ease;
+    margin-bottom: 5vh;
+    margin: 2vh auto;
+    animation: wiggle 1.7s ease infinite;
+    animation-delay: var(--animation-delay, 0s);
+}
+
+.poke-card-team-shake .card-body {
+    display: none;
 }
 
  .card-container {
@@ -48,7 +61,7 @@
     position: relative;
 }
 
-.x-button {
+.hover-button {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -60,6 +73,17 @@
     transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
-.x-button:hover {
+.hover-button:hover {
     opacity: 0.5;
+}
+
+.team-x-button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 17px !important;
+    height: 17px !important;
+    font-size: smaller !important;
+    padding: 0px !important;
+    margin: 0px ip !important;
 }
