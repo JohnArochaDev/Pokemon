@@ -53,6 +53,6 @@
 
 .change-team {
     position: absolute;
-    bottom: .5vh;
+    bottom: 1vh;
     transform: translate(-50%, -50%);
 }

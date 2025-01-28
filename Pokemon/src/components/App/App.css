@@ -51,11 +51,13 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .card-container {
   width: 250px;
   height: 370px;
   box-sizing: border-box;
+  margin-bottom: -3rem;
+
 }
