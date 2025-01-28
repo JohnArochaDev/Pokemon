@@ -32,8 +32,8 @@ export default function HamburgerMenu({ team, setTeam, changeTeam, setChangeTeam
                     {team.length > 0 && (
                         <PokeCard />
                     )}
-                    <Button className='change-team' onClick={handleChangeTeam} >
-                        Change Team
+                    <Button className='change-team' variant={changeTeam ? 'danger' : 'primary'} onClick={handleChangeTeam} >
+                        {changeTeam ? 'Cancel' : 'Change Team'}
                     </Button>
                 </div>
             </div>
