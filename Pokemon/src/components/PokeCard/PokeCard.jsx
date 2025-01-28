@@ -26,12 +26,17 @@ export default function PokeCard({ img, name, poke, number, team, setTeam, chang
         }
     }
 
+    function removeFromTeam() {
+        const updatedTeam = team.filter(poke => poke.number !== String(number).padStart(3, '0'));
+        setTeam(updatedTeam);
+    }
+
     return (
         <>
             <Card className={size == 'small' ? changeTeam ? 'poke-card-team-shake' : 'poke-card-team' : changeTeam ? 'poke-card-shake' : 'poke-card'} ref={cardRef}>
                 <Card.Img variant="top" src={img} style={{ backgroundColor: '#d9d9d9' }} />
                 {size === 'small' && (
-                    <Button className='team-x-button' variant='danger'></Button>
+                    <Button className='team-x-button' variant='danger' onClick={removeFromTeam} />
                 )}
                 {changeTeam && !size && (
                     <Button className='hover-button' onClick={() => addToTeam()}>
