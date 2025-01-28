@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import PokeCard from '../PokeCard/PokeCard'
 import PokemonDetail from '../PokemonDetail/PokemonDetail.jsx'
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu.jsx'
 
 import backgroundImage from '../../assets/pokemon.png'
 
@@ -13,6 +14,8 @@ function App() {
 
     const [pokemon, setPokemon] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
+    const [team, setTeam] = useState([])
+    const [changeTeam, setChangeTeam] = useState(false)
 
     useEffect(() => {
         async function fetchPokemon() {
@@ -49,6 +52,12 @@ function App() {
             <Routes>
                 <Route path="/" element={
                     <>
+                        <HamburgerMenu 
+                            team={team} 
+                            setTeam={setTeam}
+                            changeTeam={changeTeam}
+                            setChangeTeam={setChangeTeam}
+                        />
                         <div style={{paddingTop: '1vh', paddingBottom: '4vh'}} >
                             <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
                         </div>
@@ -67,6 +76,8 @@ function App() {
                                         img={poke.img}
                                         poke={poke}
                                         number={poke.number}
+                                        changeTeam={changeTeam}
+                                        setChangeTeam={setChangeTeam}
                                     />
                                 </div>
                             )) : ''}
