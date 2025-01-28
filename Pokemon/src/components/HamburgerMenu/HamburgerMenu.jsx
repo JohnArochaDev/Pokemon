@@ -9,6 +9,9 @@ export default function HamburgerMenu({ team, setTeam, changeTeam, setChangeTeam
 
     function toggleMenu() {
         setMenu(!menu)
+        if(menu) {
+            setChangeTeam(false)
+        }
     }
 
     function handleChangeTeam() {
