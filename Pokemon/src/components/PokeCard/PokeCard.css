@@ -29,6 +29,17 @@
     transform: scale(1.05);
 }
 
+.poke-card-team {
+    width: 6vw;
+    transition: transform 0.3s ease;
+    margin-bottom: 5vh;
+    margin: 2vh auto; /* Add vertical spacing between cards */
+}
+
+.poke-card-team .card-body {
+    display: none; /* Hide the card body content */
+}
+
  .card-container {
     width: 90%;
     max-width: 250px;

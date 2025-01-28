@@ -2,7 +2,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useEffect, useRef } from 'react';
 import './PokeCard.css';
 
-export default function PokeCard({ img, name, poke, number, team, setTeam, changeTeam, setChangeTeam }) {
+export default function PokeCard({ img, name, poke, number, team, setTeam, changeTeam, setChangeTeam, size }) {
     const cardRef = useRef(null);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export default function PokeCard({ img, name, poke, number, team, setTeam, chang
 
     return (
         <>
-            <Card className={changeTeam ? 'poke-card-shake' : 'poke-card'} ref={cardRef}>
+            <Card className={size == 'small' ? 'poke-card-team' : changeTeam ? 'poke-card-shake' : 'poke-card'} ref={cardRef}>
                 <Card.Img variant="top" src={img} style={{ backgroundColor: '#d9d9d9' }} />
                 {changeTeam && (
                     <Button className='x-button' onClick={() => addToTeam()}>
