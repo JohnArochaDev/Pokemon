@@ -43,6 +43,10 @@ function App() {
         fetchPokemon()
     }, [])
 
+    useEffect(() => {
+        console.log('Team updated:', team);
+    }, [team]);
+
     const filteredPokemon = pokemon.filter(poke =>
         poke.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
     )
@@ -70,12 +74,14 @@ function App() {
                         />
                         <div className="row" style={{marginTop: '5vh'}}>
                             {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
-                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx} onClick={() => navigate(`/${poke.number}`)}>
+                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx} onClick={!changeTeam ? () => navigate(`/${poke.number}`) : () => {}}>
                                     <PokeCard
                                         name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
                                         img={poke.img}
                                         poke={poke}
                                         number={poke.number}
+                                        team={team}
+                                        setTeam={setTeam}
                                         changeTeam={changeTeam}
                                         setChangeTeam={setChangeTeam}
                                     />
