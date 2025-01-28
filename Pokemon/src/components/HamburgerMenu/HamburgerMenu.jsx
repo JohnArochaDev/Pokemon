@@ -20,7 +20,7 @@ export default function HamburgerMenu({ team, setTeam, changeTeam, setChangeTeam
 
     return (
         <div>
-            <Button variant="light" onClick={toggleMenu} className="hamburger-button">
+            <Button variant="light" onClick={toggleMenu} className="hamburger-button" style={{color: 'white', paddingBottom: '1vh'}} >
                 &#9776;
             </Button>
             <div className={`slide-menu ${menu ? 'open' : ''}`}>
