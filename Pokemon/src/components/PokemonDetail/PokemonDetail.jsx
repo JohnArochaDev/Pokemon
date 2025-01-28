@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ProgressBar } from 'react-bootstrap';
+import { ProgressBar, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
 import './PokemonDetail.css';
 
 export default function PokemonDetail() {
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(null);
     const [description, setDescription] = useState('');
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchPokemon() {
@@ -45,6 +49,16 @@ export default function PokemonDetail() {
             style={{ width: '60vw', height: 'auto' }}
         >
             <div className="row">
+                <div className="col-12 d-flex justify-content-start">
+                    <Button
+                        onClick={() => navigate('/')}
+                        className="mb-3 go-back-button"
+                    >
+                        Go Back
+                    </Button>
+                </div>
+            </div>
+            <div className="row">
                 <div className="col-md-6 left-section text-center d-flex flex-column align-items-center">
                     <img
                         src={pokemon.sprites.front_default}
@@ -82,18 +96,20 @@ export default function PokemonDetail() {
                 </div>
             </div>
             <div className="row">
-            <div className="col-md-6 left-section text-center d-flex flex-column align-items-center">
-                <h1>
-                    {pokemon.name[0].toUpperCase() +
-                        pokemon.name.substring(1, pokemon.name.length + 1)}
-                </h1>
-                <h2>
-                    <span className="label">Height:</span> <span className="data">{pokemon.height}</span>
-                </h2>
-                <h2>
-                    <span className="label">Weight:</span> <span className="data">{pokemon.weight}</span>
-                </h2>
-            </div>
+                <div className="col-md-6 left-section text-center d-flex flex-column align-items-center">
+                    <h1>
+                        {pokemon.name[0].toUpperCase() +
+                            pokemon.name.substring(1, pokemon.name.length + 1)}
+                    </h1>
+                    <h2>
+                        <span className="label">Height:</span>{' '}
+                        <span className="data">{pokemon.height}</span>
+                    </h2>
+                    <h2>
+                        <span className="label">Weight:</span>{' '}
+                        <span className="data">{pokemon.weight}</span>
+                    </h2>
+                </div>
                 <div className="col-md-6 right-section d-flex flex-column justify-content-center align-items-center">
                     <h3>Description:</h3>
                     <p>{description}</p>
