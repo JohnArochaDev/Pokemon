@@ -1,92 +1,92 @@
 @keyframes wiggle {
-  0%,
-  9%,
-  100% {
-    transform: rotate(0deg);
-  }
-  10%,
-  20%,
-  30% {
-    transform: rotate(-1.7deg);
-  }
-  15%,
-  25%,
-  35% {
-    transform: rotate(1.7deg);
-  }
-  49%,
-  70%,
-  80%,
-  90% {
-    transform: rotate(0deg);
-  }
+    0%,
+    9%,
+    100% {
+        transform: rotate(0deg);
+    }
+    10%,
+    20%,
+    30% {
+        transform: rotate(-1.7deg);
+    }
+    15%,
+    25%,
+    35% {
+        transform: rotate(1.7deg);
+    }
+    49%,
+    70%,
+    80%,
+    90% {
+        transform: rotate(0deg);
+    }
 }
 
 .poke-card {
-  transition: transform 0.3s ease;
-  margin-bottom: 5vh;
+    transition: transform 0.3s ease;
+    margin-bottom: 5vh;
 }
 
 .poke-card-shake {
-  transition: transform 0.03s ease;
-  margin-bottom: 5vh;
-  animation: wiggle 1.7s ease infinite;
-  animation-delay: var(--animation-delay, 0s);
+    transition: transform 0.03s ease;
+    margin-bottom: 5vh;
+    animation: wiggle 1.7s ease infinite;
+    animation-delay: var(--animation-delay, 0s);
 }
 
 .poke-card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .poke-card-team {
-  width: 6vw;
-  transition: transform 0.3s ease;
-  margin-bottom: 5vh;
-  margin: 2vh auto;
+    width: 6vw;
+    transition: transform 0.3s ease;
+    margin-bottom: 5vh;
+    margin: 2vh auto;
 }
 
 .poke-card-team .card-body {
-  display: none;
+    display: none;
 }
 
 .poke-card-team-shake {
-  width: 6vw;
-  transition: transform 0.3s ease;
-  margin-bottom: 5vh;
-  margin: 2vh auto;
-  animation: wiggle 1.7s ease infinite;
-  animation-delay: var(--animation-delay, 0s);
+    width: 6vw;
+    transition: transform 0.3s ease;
+    margin-bottom: 5vh;
+    margin: 2vh auto;
+    animation: wiggle 1.7s ease infinite;
+    animation-delay: var(--animation-delay, 0s);
 }
 
 .poke-card-team-shake .card-body {
-  display: none;
+    display: none;
 }
 
 .hover-button {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  background-color: black !important;
-  color: grey;
-  transition:
-    opacity 0.3s ease,
-    background-color 0.3s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    background-color: black !important;
+    color: grey;
+    transition:
+        opacity 0.3s ease,
+        background-color 0.3s ease;
 }
 
 .hover-button:hover {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 .team-x-button {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 20px !important;
-  height: 20px !important;
-  font-size: smaller !important;
-  padding: 0px !important;
-  margin: 0px ip !important;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 20px !important;
+    height: 20px !important;
+    font-size: smaller !important;
+    padding: 0px !important;
+    margin: 0px ip !important;
 }

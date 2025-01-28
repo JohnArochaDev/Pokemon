@@ -1,26 +1,64 @@
 .pokemon-detail-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .left-section,
 .right-section {
-  padding: 20px;
+    padding: 20px;
 }
 
 .bottom-section {
-  margin-top: 20px;
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
 }
 
 .pokemon-detail-container .left-section,
 .pokemon-detail-container .right-section {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .pokemon-detail-container .right-section p {
-  margin: 10px 0;
+    margin: 10px 0;
+}
+
+.stat-name {
+    text-align: left;
+    padding-right: 10px; /* Adjust the padding as needed */
+}
+
+.stat-value {
+    text-align: right;
+}
+
+.left-section,
+.right-section {
+    padding: 10px; /* Reduced padding */
+}
+
+.bottom-section {
+    margin-top: 10px; /* Reduced margin */
+    border-top: 1px solid #ccc;
+    padding-top: 10px; /* Reduced padding */
+}
+
+.pokemon-detail-container .left-section,
+.pokemon-detail-container .right-section {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.pokemon-detail-container .right-section p {
+    margin: 5px 0; /* Reduced margin */
+}
+
+.stat-name {
+    text-align: left;
+    padding-right: 5px; /* Reduced padding */
+}
+
+.stat-value {
+    text-align: right;
 }
