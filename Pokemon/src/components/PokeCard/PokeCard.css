@@ -30,7 +30,7 @@
 }
 
 .poke-card-team {
-    width: 7vw;
+    width: 6vw;
     transition: transform 0.3s ease;
     margin-bottom: 5vh;
     margin: 2vh auto;
@@ -41,7 +41,7 @@
 }
 
 .poke-card-team-shake {
-    width: 7vw;
+    width: 6vw;
     transition: transform 0.3s ease;
     margin-bottom: 5vh;
     margin: 2vh auto;
@@ -51,14 +51,6 @@
 
 .poke-card-team-shake .card-body {
     display: none;
-}
-
- .card-container {
-    width: 90%;
-    max-width: 250px;
-    aspect-ratio: 250 / 390;
-    margin: 0 auto;
-    position: relative;
 }
 
 .hover-button {

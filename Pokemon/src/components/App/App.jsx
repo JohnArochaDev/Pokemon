@@ -72,9 +72,9 @@ function App() {
                             onChange={(e) => setSearchQuery(e.target.value)}
                             style={{ padding: '10px', marginBottom: '20px', width: '80%', maxWidth: '400px', border: '1px solid #ccc', borderRadius: '5px' }}
                         />
-                        <div className="row" style={{marginTop: '5vh'}}>
+                        <div className="flex-container" style={{marginTop: '5vh'}}>
                             {filteredPokemon.length > 0 ? filteredPokemon.map((poke, idx) => (
-                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card-container" key={idx} onClick={!changeTeam ? () => navigate(`/${poke.number}`) : () => {}}>
+                                <div className="card-container" key={idx} onClick={!changeTeam ? () => navigate(`/${poke.number}`) : () => {}}>
                                     <PokeCard
                                         name={poke.name[0].toUpperCase() + poke.name.substring(1, poke.name.length + 1)}
                                         img={poke.img}

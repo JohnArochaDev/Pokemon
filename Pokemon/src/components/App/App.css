@@ -45,3 +45,17 @@
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.card-container {
+  width: 250px;
+  height: 370px;
+  box-sizing: border-box;
+}
