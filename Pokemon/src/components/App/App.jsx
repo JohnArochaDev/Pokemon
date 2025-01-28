@@ -62,7 +62,7 @@ function App() {
                             changeTeam={changeTeam}
                             setChangeTeam={setChangeTeam}
                         />
-                        <div style={{paddingTop: '1vh', paddingBottom: '4vh'}} >
+                        <div style={{paddingTop: '1vh', paddingBottom: '4vh', userSelect: 'none'}} >
                             <img src={backgroundImage} alt="Background" style={{ width: '400px', height: 'auto' }} />
                         </div>
                         <input
