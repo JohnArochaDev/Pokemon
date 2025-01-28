@@ -29,6 +29,7 @@ export default function HamburgerMenu({ team, setTeam, changeTeam, setChangeTeam
                 </Button>
                 <div className="menu-content">
                     <h2>Team</h2>
+                    <hr />
                     {team.length > 0 && (team.map((poke) => (
                         <PokeCard
                             key={`team${poke.number}`}
