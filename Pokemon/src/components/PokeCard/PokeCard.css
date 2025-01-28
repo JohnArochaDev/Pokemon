@@ -1,6 +1,42 @@
+@keyframes wiggle {
+    0%, 9%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 20%, 30% {
+        transform: rotate(-1.7deg);
+    }
+    15%, 25%, 35% {
+        transform: rotate(1.7deg);
+    }
+    50%, 70%, 80%, 90% {
+        transform: rotate(0deg);
+    }
+}
+/* @keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30%, 50% {
+        transform: rotate(-3deg);
+    }
+    20%, 40%, 60% {
+        transform: rotate(3deg);
+    }
+    70%, 80%, 90% {
+        transform: rotate(0deg);
+    }
+} */
+
 .poke-card {
     transition: transform 0.3s ease;
     margin-bottom: 5vh;
+}
+
+.poke-card-shake {
+    transition: transform 0.03s ease;
+    margin-bottom: 5vh;
+    animation: wiggle 1.7s ease infinite;
+    animation-delay: var(--animation-delay, 0s); /* Use CSS variable for animation delay */
 }
 
 .poke-card:hover {
