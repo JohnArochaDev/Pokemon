@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import PokeCard from '../PokeCard/PokeCard';
 import 'bootstrap/dist/css/bootstrap.min.css';

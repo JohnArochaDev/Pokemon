@@ -1,5 +1,5 @@
 import { Button, Card } from 'react-bootstrap';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './PokeCard.css';
 
 export default function PokeCard({
